@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 @NgModule({
   declarations: [
@@ -10,9 +10,16 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UpgradeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private upgrade: UpgradeModule) {
+    this.upgrade.bootstrap(document.body, ['myjsapp']);
+  }
+
+}
