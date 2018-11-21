@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-.someclass {
-    backdrop-filter: inherit;
+.ng1x {
+    border: 3px solid black;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.ng2x {
+    border: 4px double blue;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
 }

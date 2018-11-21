@@ -1,25 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { UpgradeModule } from '@angular/upgrade/static';
+import { ng2RootComponent } from './components/ng2-root.component';
+import { SimpleChildComponent } from './components/ng2-simple-child.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ng2RootComponent,
+    SimpleChildComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    UpgradeModule
+    UpgradeModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    ng2RootComponent
+  ],
+  providers: []
 })
 export class AppModule {
-
   constructor(private upgrade: UpgradeModule) {
-    this.upgrade.bootstrap(document.body, ['myjsapp']);
   }
 
+  ngDoBootstrap() {
+    this.upgrade.bootstrap(document.body, ['myjsapp']);
+  }
 }
