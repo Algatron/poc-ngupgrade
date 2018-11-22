@@ -1,0 +1,16 @@
+<div class="ng1x">
+    ng1xChildComponent
+    <div>
+        @ binding: {{ $ctrl.astring }}
+    </div>
+    <div>
+        &lt; binding: {{ $ctrl.aobj | json }}
+        <input type="text" data-ng-model="$ctrl.aobj">
+    </div>
+    <div>
+        = binding: {{ $ctrl.twoway | json }}
+    </div>
+    <div>
+        data from ng1x service with promise: {{ $ctrl.data }}
+    </div>
+</div>

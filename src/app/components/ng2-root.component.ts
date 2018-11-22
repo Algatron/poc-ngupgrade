@@ -6,8 +6,9 @@ import { Component } from "@angular/core";
         <div class="ng2x">
             ng2-root
             <simple-child></simple-child>
-        </div>
-    `
+            <ng2-io-parent></ng2-io-parent>
+            </div>
+            `
 })
 export class ng2RootComponent {
 }

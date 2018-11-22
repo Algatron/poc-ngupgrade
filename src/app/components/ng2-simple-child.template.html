@@ -1,0 +1,33 @@
+<div class="ng2x">
+    ng2-simple-child
+    <h5>bind to async</h5>
+    <ul>
+        <li>
+            Observable w/ async pipe: <strong>{{ (observableData | async)?.colors | json }}</strong>
+        </li>
+        <li>
+            Observable w/ async pipe: <strong>{{ (observableCaughtErr | async)?.colors | json }}</strong>
+        </li>
+        <li *ngIf="observableErr | async as obs; else loadingfred">
+            Observable caught err: <strong>{{ obs?.colors | json }}</strong>
+        </li>
+        <ng-template #loadingfred>
+            <li><div>Loading...</div></li>
+        </ng-template>
+        <li>
+            Promise w/ async pipe: <strong>{{ (promiseData | async)?.colors | json }}</strong>
+        </li>
+    </ul>
+    <h5>bind to async</h5>
+    <ul>
+        <li>
+            Resolved observable:
+            <ng-container *ngIf="resolvedObservable; else loading2">
+                <strong>{{ (resolvedObservable?.colors) | json }}</strong>
+            </ng-container>
+            <ng-template #loading2>
+                Loading...
+            </ng-template>
+        </li>
+    </ul>
+</div>
